@@ -11,3 +11,4 @@
     sudo pip3 install /tensorflow-1.8.0-cp35-none-linux_armv7l.whl
     sudo apt-get install libatlas-base-dev
     ```
+
