@@ -11,3 +11,23 @@ SELECT LOWER(`last`),
     ELT(0.5 + RAND() * 6, 'AIM', 'ICQ', 'MSN', 'Yahoo', 'GTalk', 'Other')
 FROM `contact`
 ```
+3. 数据库查询中查询出某一种的数据个数，或者多条件查询
+```sql
+select
+    A.var,
+    sum( case 
+        when ifnull(A.var,'')!='' then 1 when 2 then 0 
+        end) as sum
+from 
+    table A
+    inner join table B 
+    on A.var = B.var 
+where 
+    condition A 
+    and condition B 
+group by 
+    A.var
+```
+4. sql中数值转换问题
+ >数值转换有三种：format，convert，turncate
+ + format为格式化，如果格式化为format(var,4)结果保留四位小数，但是返回结果为string类型，并且会有分隔符','如：『1,234,1234』
