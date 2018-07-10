@@ -29,5 +29,7 @@ group by
     A.var
 ```
 4. sql中数值转换问题
- >数值转换有三种：format，convert，turncate
- + format为格式化，如果格式化为format(var,4)结果保留四位小数，但是返回结果为string类型，并且会有分隔符','如：『1,234,1234』
+ >数值转换有三种：`format`，`convert`，`turncate`
+ + format为格式化，如果格式化为format(var,4)结果保留四位小数，但是返回结果为string类型，并且会有分隔符','如：『`1,234,1234`』
+ + turncate 为截取，没有四舍五入用法为：`turncate(var,4)`
+ + convert是转换，将原始数值转换为需要的类型有四舍五入，用法为：`convert(var,decimal(18,4))`
