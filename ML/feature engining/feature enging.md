@@ -11,8 +11,9 @@
 3.  shuffle training data:
     ```python
     import sklearn
-    
-
     ```
 4. 利用pandas快速查看参数与结果之间的关系(take titanic as example)
-    >`print(train[['Pclass','Survived']].groupby(['Pclass'],as_index=False).mean())`</br>Explanation: if Sruvived is 0 or 1,then mean(train['Survived']) will be the posibility of Surviving`
+    ```ptyhon
+    print(train[['Pclass','Survived']].groupby(['Pclass'],as_index=False).mean())
+    ```
+    </br>Explanation: if Sruvived is 0 or 1,then mean(train['Survived']) will be the posibility of Surviving`

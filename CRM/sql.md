@@ -7,7 +7,7 @@
 INSERT INTO
      `im`
 (`im`, `service`)
-SELECT LOWER(`last`),
+SELECT LOWEfR(`last`),
     ELT(0.5 + RAND() * 6, 'AIM', 'ICQ', 'MSN', 'Yahoo', 'GTalk', 'Other')
 FROM `contact`
 ```
