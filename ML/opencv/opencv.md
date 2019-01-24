@@ -20,3 +20,7 @@
    ```shell
    opencv_createsamples -info a\ copy.txt -bg test.txt 255 -w 640 -h 480 -num 500 -vec object.vec
    ```
+4. train cascade
+   ```shell
+   opencv_traincascade -featureType LBP -w 40 -h 40 -numPos 400 -numNeg 1000 -numberStg 20 -data cascade -bg test.txt -vec object.vec -minHitRate 0.995
+   ```
