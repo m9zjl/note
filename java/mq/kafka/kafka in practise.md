@@ -138,7 +138,40 @@ while (true) {
 
 ## 5. rebance
 
+> <font color=error size=7>TODO</font>
 
+## 6. spring kafka auto config
+
+application.yml for consumer wait for 1s or fetch size = 10k
+
+```yaml
+spring:
+  kafka:
+    # 消费者
+    consumer:
+      group-id: groupId
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+      fetch.min.bytes: 10240
+      fetch.max.wait.ms: 1_000
+    # 生产者
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    properties:
+      concurrency: 2
+```
+
+```java
+@Component
+public class SimpleListener {
+    ## set batch fetch in consumerFacotry
+    @KafkaListener(topics = {"topic1", "topic2"}, consumeFacotry="consumerFactory")
+    public void listen(ConsumerRecord<String,String> data) {
+    }
+}
+```
 
 ---
 
