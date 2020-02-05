@@ -201,8 +201,12 @@ participant brokerA as a
 participant kafka Cluster as s
 participant brokerB as b
 
-a->s: connect
-s->a: return
+a->s: join the consumer group
+s->a: leader with consumer list
+b->s: join the consumer group
+a->s: assigning partitions to consumers
+s->b: assignment
+s->a: assignment
 ```
 
 ---
