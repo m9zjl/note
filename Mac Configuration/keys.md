@@ -1,4 +1,4 @@
 # intellij activate account
 
->username: pnflyymq1@cougarmail.collin.edu
->123456uhb!
+>pnflyymq1@cougarmail.collin.edu
+>MTIzNDU2dWhiJTIx
