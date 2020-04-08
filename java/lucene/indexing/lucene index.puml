@@ -1,0 +1,16 @@
+@@@@startuml lucene indexing
+IndexWriter->DocumentWriter: addDocument->updateDocuemnt
+DocumentWriter->DocuemntWriterPerThead: get PerThread from FlushControl
+DocuemntWriterPerThead->DocCßonsumer: udpateDocument
+DocConsumer->DefaultIndexingChain:processDocument
+DefaultIndexingChain->PerField:peocessField
+PerField->TermsHashPerField:invert
+TermsHashPerField->FreqProxTermsWriterPerField:add->newTerms/addTerms
+FreqProxTermsWriterPerField->TermsHashPerField
+TermsHashPerField->PerField
+PerField->DefaultIndexingChain
+DefaultIndexingChain->DocConsumer
+DocConsumer->DocuemntWriterPerThead
+DocuemntWriterPerThead->DocumentWriter
+DocumentWriter->IndexWriter:updateDocuemnt
+@@@@enduml

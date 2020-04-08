@@ -1,0 +1,92 @@
+@@startuml ConcreteQueryActionUML
+interface QueryAction{
+    + parametersHandling()
+    + beforeQueryAction()
+    + afterQueryAction()
+    + handlingReturnField()
+}
+
+class ComplexQuery{ 
+
+}
+note top of ComplexQuery: complex search concrete class
+
+class TagGroupQeury{
+
+}
+note top of TagGroupQeury: standerd taggroup query class
+
+
+class ImportedCustQuery{
+
+}
+note top of ImportedCustQuery: imported custs from excel or other system query class
+
+
+class MultiMonthQuery{
+    + afterQueryAction()
+}
+note top of MultiMonthQuery: multi month query
+
+
+QueryAction <|.. ComplexQuery
+
+QueryAction <|.. TagGroupQeury
+
+QueryAction <|.. ImportedCustQuery
+
+QueryAction <|.. MultiMonthQuery
+@@enduml
+
+
+@@@startuml query flow demo
+query --> QueryHandlerController : 调用查询控制器 ProcessQueryParameters
+hnote over QueryHandlerController : lock()
+QueryHandlerController --> QueryConsumerPerThread : 查询woker线程 consumePoll.obtainAndLock()
+QueryConsumerPerThread --> Consumer : qcpt.processQuery(params);
+Consumer --> QueryChain : 参数设置
+QueryChain --> Consumer : 返回参数
+hnote over Consumer : 执行查询 返回结果或者scroll_id
+Consumer --> QueryChain : 查询后置器
+QueryChain --> Consumer : 返回处理后的结果
+Consumer --> QueryConsumerPerThread : 返回查询结果
+QueryConsumerPerThread --> QueryHandlerController : 
+hnote over QueryHandlerController : unLock()
+QueryHandlerController --> query : 返回结果
+@@@enduml
+
+@startuml query flow
+ 
+title 流程图
+ 
+(*) --> "步骤1处理"
+--> "步骤2处理"
+if "条件1判断" then
+    ->[true] "条件1成立时执行的动作"
+    if "分支条件2判断" then
+        ->[no] "条件2不成立时执行的动作"
+        -> === 中间流程汇总点1 ===
+    else
+        -->[yes] === 中间流程汇总点1 ===
+    endif
+    if "分支条件3判断" then
+        -->[yes] "分支条件3成立时执行的动作"
+        --> "Page.onRender ()" as render
+        --> === REDIRECT_CHECK ===
+    else
+        -->[no] "分支条件3不成立时的动作"
+        --> render
+    endif
+else
+    -->[false] === REDIRECT_CHECK ===
+endif
+ 
+if "条件4判断" then
+    ->[yes] "条件4成立时执行的动作"
+    --> "流程最后结点"
+else
+endif
+--> "流程最后结点"
+-->(*)
+ 
+@enduml
