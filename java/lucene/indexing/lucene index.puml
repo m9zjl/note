@@ -1,7 +1,7 @@
 @@@@startuml lucene indexing
 IndexWriter->DocumentWriter: addDocument->updateDocuemnt
 DocumentWriter->DocuemntWriterPerThead: get PerThread from FlushControl
-DocuemntWriterPerThead->DocCßonsumer: udpateDocument
+DocuemntWriterPerThead->DocConsumer: udpateDocument
 DocConsumer->DefaultIndexingChain:processDocument
 DefaultIndexingChain->PerField:peocessField
 PerField->TermsHashPerField:invert
