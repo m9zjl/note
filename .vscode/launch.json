@@ -1,0 +1,91 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BasicCalcualtor224<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "BasicCalcualtor224",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Candy135<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "Candy135",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Dp174<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "Dp174",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Ladder<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "Ladder",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Manacher214<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "Manacher214",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Max<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "Max",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RadixSort164<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "RadixSort164",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SlidingWindowMaximum239<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "SlidingWindowMaximum239",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TreeTraversal<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "TreeTraversal",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-WordBreak140<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "WordBreak140",
+            "projectName": "notes_78f0f54"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-WordSearch212<notes_78f0f54>",
+            "request": "launch",
+            "mainClass": "WordSearch212",
+            "projectName": "notes_78f0f54"
+        }
+    ]
+}
