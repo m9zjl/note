@@ -2,11 +2,11 @@
 
 -----
 
-1. SQL中通过列表查询用法
+## 1. SQL中通过列表查询用法
 
 >and var in (1,1,1)
 
-2. sql生成数据时随机声称数组中的内容
+## 2. sql生成数据时随机声称数组中的内容
 
 ```sql
 INSERT INTO
@@ -17,7 +17,7 @@ SELECT LOWEfR(`last`),
 FROM `contact`
 ```
 
-3. 数据库查询中查询出某一种的数据个数，或者多条件查询
+## 3. 数据库查询中查询出某一种的数据个数，或者多条件查询
 
 ```sql
 select
@@ -36,7 +36,7 @@ group by
     A.var
 ```
 
-4. sql中数值转换问题
+## 4. sql中数值转换问题
 
  >数值转换有三种：`format`，`convert`，`turncate`
 
