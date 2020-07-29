@@ -19,9 +19,21 @@ gantt
         验收: 3d
 ```
 
+```mermaid
+gantt
+    title reading plan 2020.7.27
+    section 算法竞赛入门经典
+      chapter 1 算法设计基础  :a1, 07-27,5d
+    section 雅思阅读
+      test2           :a2, 07-27,5d
+
+```
+
 - daily done
-  - [ ] leetcode刷题
-  - [ ] 
+  - 2020-07-27
+    - [ ] leetcode刷题
+    - [ ] 算法竞赛入门经典10页
+    - [ ] 波哥推荐系统课
 
 - week plan
   - `2020.7.1` - `2020.7.6`
