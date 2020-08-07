@@ -29,6 +29,28 @@ gantt
 
 ```
 
+```mermaid
+gantt
+    title reading plan 2020.8.1 34周
+    dateFormat YYYY-MM-DD
+    section 算法竞赛入门经典
+    chapter 1 算法设计基础  :a1,2020-08-01,30d
+    bandit :after a1, 3d
+
+```
+
+```mermaid
+gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 3d
+    Another task     :after a1  , 2d
+    section Another
+    Task in sec      :2014-01-01  , 1d
+    another task      : 4d
+```
+
 - daily done
   - 2020-07-27
     - [ ] leetcode刷题
