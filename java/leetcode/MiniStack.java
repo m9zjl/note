@@ -3,103 +3,183 @@ import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.Stack;
 
-class Solution407 {
+class MinStack {
 
     public static void main(String[] args) {
-        Solution407 s = new Solution407();
-
-        /**
-         * [[12,13,1,12],[13,4,13,12],[13,8,10,12],[12,13,12,12],[13,13,13,13]]
-         */
-//        int[][] map = new int[][]{
-//                new int[]{12, 13, 1, 12},
-//                new int[]{13, 4, 13, 12}, // 12 13
-//                new int[]{13, 8, 10, 12}, // 12 12
-//                new int[]{12, 13, 12, 12},// 13 12
-//                new int[]{13, 13, 13, 13},
-//        };
-        System.out.println(s.backspaceCompare("ab##", "c#d#"));
+        MinStack minStack = new MinStack();
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        minStack.getMin(); // return -3
+        minStack.pop();
+        minStack.top();    // return 0
+        minStack.getMin(); // return -2
     }
 
-    private static class Cell implements Comparable<Cell> {
-        private int row;
-        private int col;
-        private int value;
+    class Node {
+        int x;
+        int min;
+        Node next;
 
-        public Cell(int r, int c, int v) {
-            this.row = r;
-            this.col = c;
-            this.value = v;
-        }
-
-        @Override
-        public int compareTo(Cell other) {
-            return value - other.value;
+        public Node(int val, int min, Node next) {
+            this.x = val;
+            this.min = min;
+            this.next = next;
         }
     }
 
-    public int trapRainWater(int[][] heights) {
-        int m = heights.length;
-        int n = heights[0].length;
+    Node head = null;
 
-        PriorityQueue<Cell> queue = new PriorityQueue<>();
-
-        boolean[][] visited = new boolean[m][n];
-
-        for (int i = 0; i < m; i++) {
-            visited[i][0] = true;
-            visited[i][n - 1] = true;
-            queue.offer(new Cell(i, 0, heights[i][0]));
-            queue.offer(new Cell(i, n - 1, heights[i][n - 1]));
-        }
-        for (int i = 0; i < n; i++) {
-            visited[0][i] = true;
-            visited[m - 1][i] = true;
-            queue.offer(new Cell(0, i, heights[0][i]));
-            queue.offer(new Cell(m - 1, i, heights[m - 1][i]));
-        }
-        int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-
-        int result = 0;
-        while (!queue.isEmpty()) {
-            Cell cell = queue.poll();
-            for (int[] dir : dirs) {
-                int x = cell.row + dir[0];
-                int y = cell.col + dir[1];
-                if (x >= 0 && y >= 0 && x < m && y < n && !visited[x][y]) {
-                    visited[x][y] = true;
-                    result += Math.max(0, cell.value - heights[x][y]);
-                    queue.offer(new Cell(x, y, Math.max(heights[x][y], cell.value)));
-                }
-            }
-        }
-        Set set = new HashSet<>();
-        return result;
+    /**
+     * initialize your data structure here.
+     */
+    public MinStack() {
     }
 
-    public boolean backspaceCompare(String S, String T) {
-        Stack<Character> stack = new Stack<>();
-        String s1 = getCompressedStr(S, stack);
-        String s2 = getCompressedStr(T, stack);
-        return s1.compareTo(s2) == 0;
+    public void push(int x) {
+        head = head == null ? new Node(x, x, null) : new Node(x, Math.min(x, head.x), head);
     }
 
-    private String getCompressedStr(String s, Stack<Character> stack) {
-        stack.clear();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (c == '#') {
-                if (!stack.isEmpty()) {
-                    stack.pop();
-                }
-            } else {
-                stack.push(c);
-            }
+    public void pop() {
+        head = head.next;
+    }
+
+    public int top() {
+        int val = head.x;
+        head = head.next;
+        return val;
+
+    }
+
+    public int getMin() {
+        return head.min;
+    }
+
+
+}
+
+class Solution {
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
         }
-        StringBuilder sb = new StringBuilder();
-        while (!stack.isEmpty()) {
-            sb.append(stack.pop());
+
+        TreeNode(int val) {
+            this.val = val;
         }
-        return sb.toString();
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    class Result {
+        int halfMax;
+        int pathMax;
+
+        public Result(int x, int y) {
+            this.halfMax = x;
+            this.pathMax = y;
+        }
+    }
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        Result result = dfs(root);
+        return result.pathMax;
+    }
+
+    public Result dfs(TreeNode root) {
+
+        if (root == null) {
+            return new Result(0, 0);
+        }
+        if (root.left == null && root.right == null) {
+            return new Result(root.val, 0);
+        }
+
+        Result left = dfs(root.left);
+        Result right = dfs(root.right);
+
+        return new Result(
+                Math.max(left.halfMax, right.halfMax) + root.val,
+                Math.max(left.halfMax + right.halfMax + root.val, Math.max(left.pathMax, right.pathMax))
+        );
+    }
+
+
+    public int lastStoneWeight(int[] stones) {
+        if (stones == null || stones.length == 0) {
+            return 0;
+        }
+        if (stones.length == 1) {
+            return stones[0];
+        }
+
+        PriorityQueue<Integer> queue = new PriorityQueue<>((a, b) -> b - a);
+        for (int i = 0; i < stones.length; i++) {
+            queue.offer(stones[i]);
+        }
+
+        while (queue.size() >= 2) {
+            queue.offer(Math.abs(queue.poll() - queue.poll()));
+        }
+        return queue.poll();
+    }
+
+//    public boolean checkValidString(String s) {
+//        int min = 0;
+//        int max = 0;
+//        for(int i = 0;i<s.length();i++){
+//            switch(s.charAt(i)){
+//                case '(': {
+//                    min++;
+//                    max++;
+//                    break;
+//                }
+//                case ')':{
+//                    min--;
+//                    max--;
+//                    break;
+//                }
+//                default:{
+//                    min--;
+//                    max++;
+//                }
+//                if (max<0) {
+//                    return false;
+//                }
+//                min = Math.max()
+//            }
+//        }
+//    }
+public int rangeBitwiseAnd(int m, int n) {
+    if(m==n){
+        return m;
+    }
+    if(m ==1){
+        return 0;
+    }
+    int modBase = getModBase(m);
+    int sum  = 0;
+    if(n/2<modBase){
+        sum += modBase;
+    }
+    return sum + rangeBitwiseAnd(m%modBase,n%modBase);
+}
+
+    public int getModBase(int m){
+        int t = 0;
+        int value = m;
+        while(value >1){
+            value = value >> 1;
+            t++;
+        }
+        return 2<<t;
     }
 }

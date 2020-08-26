@@ -68,3 +68,11 @@ gantt
     - [ ] hbase
     - [ ] kafka
     - [ ] Blog
+
+## weeky plan 34 2020.08.17-2020.08.23
+
+daily plan
+
+- [ ] netty
+- [ ] leetcode daily
+- [ ] eudic words
