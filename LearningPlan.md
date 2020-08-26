@@ -4,6 +4,11 @@
 
 [TOC]
 
+## 0. `TODO LIST`
+
+- [ ] lvs与haproxy lb
+- [ ] varnish / squid / nginx cache
+
 ## 1. learning plan in this week - 2020.7.1
 
 ```mermaid
@@ -68,3 +73,12 @@ gantt
     - [ ] hbase
     - [ ] kafka
     - [ ] Blog
+
+## weeky plan 34 2020.08.17-2020.08.23
+
+daily plan
+
+- [ ] netty
+- [ ] leetcode daily
+- [ ] eudic words
+- [ ] 6.828

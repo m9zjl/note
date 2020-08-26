@@ -15,7 +15,7 @@ public class BasicCalcualtor224 {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (Character.isDigit(c)) {
-                digital = digital * 10 + (c - '0');ß
+                digital = digital * 10 + (c - '0');
             }else if(c =='-'){
                 result = result + sign* digital;
                 digital = 0;
@@ -28,5 +28,6 @@ public class BasicCalcualtor224 {
                 
             }
         }
+        return 0;
     }
 }
