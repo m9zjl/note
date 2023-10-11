@@ -1,4 +1,33 @@
 GEt http://localhost:8080
 Content-Type: application/json
 
-{}
+### GET request with a header
+GET http://localhost:8080/albums
+
+
+### post
+POST http://localhost:8080/albums
+content-type: application/json
+
+{
+  "ID": "4",
+  "Title": "tests",
+  "Artist": "tessss",
+  "Price": 4.99
+}
+
+
+###
+GET https://api.exchangeratesapi.io/latest
+
+### 
+GET https://ais.usvisa-info.com/en-ca/niv HTTP/1.1
+
+
+
+###
+POST https://ais.usvisa-info.com/en-ca/niv/users/sign_in HTTP/1.1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Cookie: _yatri_session=dzBrKzA1eDhVdUtVTXM5TUhXZTVlMFZDdE5JNS9oN2lrcHRqN0kzWFhmdkFjclRNMWp2TjFyNVhVWXcvVy91R2IydHpDcmN6WC9RNEJxVjZYSlRzSzRseEV3YmZBY2NUQWErQ011ekZhL0dkaFdycXl5TE94N2gwblNsNVhoM1dOb2Q4UjRSQkoybm9SSUw3UmFIVVhLWTZMY2hFbGdKMlMrbXFlaEQzMFo1WC9hSjdJcWZLTUFBWkFrS1AzVEorWkNSVGJOMnJTUlpRK3VKaHRlRWtmOVd5Zk5KWU1iVjVIQUdad21YUFNzdFhaLzNBSkJzT3dvU0Y0NmNoclV5UTQ4QmhJSHZOclJKdjF1dzgvTld4T3lub29tMnBLWFkrREVRN0lSdEI3TUY5YVdMZkVMR2xEOWQ5aVNtbWw2VXlqT2ZCc3dmN0Vaa2N3c0VWMHdtZGRTZFU1V3FDR0Jua2YvYUFuQi9DN0ZsalRtTUlrUXVQVUY2MUl0V0Z2RmpNRTFwSlQ5RWtkTGdXdmY1bW1UZUVNREFVZHY4N1lLdjQ4QzVhSEJLUzkvdmNmSmMyWkxNeVgwVzhaZHlCRlk3ei0tekdBeklVL2VTblc2WEh5czYzNFpYQT09--1d71b6bf105f0d525027ea9755caac354b2e1bd2; path=/; HttpOnly; Secure; SameSite=None
+
+utf8=%E2%9C%93&user%5Bemail%5D=i667zjl%40hotmail.com&user%5Bpassword%5D=Zxcvbnm1&policy_confirmed=1&commit=Sign+In

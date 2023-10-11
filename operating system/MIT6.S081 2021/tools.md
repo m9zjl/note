@@ -1,6 +1,9 @@
 # build and uninstall tools
 https://pdos.csail.mit.edu/6.S081/2021/tools.html
 
+## lecture 
+https://fanxiao.tech/posts/MIT-6S081-notes/
+
 ## vscode debug
 
 ```json

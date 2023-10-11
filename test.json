@@ -1,0 +1,20 @@
+curl 'https://ais.usvisa-info.com/en-ca/niv/users/sign_in' \
+  -H 'Accept: */*;q=0.5, text/javascript, application/javascript, application/ecmascript, application/x-ecmascript' \
+  -H 'Accept-Language: en,en-US;q=0.9,zh-CN;q=0.8,zh-TW;q=0.7,zh;q=0.6,fr;q=0.5,ja;q=0.4' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+  -H 'Cookie: _yatri_session=ay9qT3FRMmlUYWhxUTdPSXRQMVVzTzFtWnp6YTIrTitZZnVPdnljd3E5M3BCZ0E2dk04UnJsSDIxR2Ftby9kVEFUNXIrSEpuU1R2TURTRGFMOVEzeTlNd0IvTFdYYVpaSUhJSDYzaldCdUc4VXNzWnU4Q25xQ3hnQUg2UStUQ0t6QVVNVGVZZTVGN3NYejc5eU1pckJ6WG92QUZwZks3ZUhjMVYvbWZvUkRzSlBhWEJSWDFHeDMwSEdRL0dSU1dsUHZvZHNhck1GYk9jKzY3M1RmYU1FeWVheWtkSmo1bzlMbEdaeG1NeWU0emovVG52YWQ3dWl5WmEyVWxuS0VuTE83anA1L2ZEeFllTkx4cjBBME9wSVdQSXVtVE1JQUNBZWdRT2djbDRoSnpFZFV1NEpldFpMWDR6TVQzV0ZxUmRWaEhlWXF5RGx4RmJMNm1kMThkZ0dnaFdmYXNKcmZmL21lVmRDTndneFYwPS0tZVFkazlKNmVYQzVzSHZZVStaQmFYUT09--bee191ef330a5b853eef04f93870ed19e3145bcf' \
+  -H 'DNT: 1' \
+  -H 'Origin: https://ais.usvisa-info.com' \
+  -H 'Referer: https://ais.usvisa-info.com/en-ca/niv/users/sign_in' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67' \
+  -H 'X-CSRF-Token: MXSge1PskCdM5cBm28j2H8NK1DJE0mGvmXOJ5m2C1hToJsKIDYWyIlpHgaR2+MvBD/j2vzqPwzJPv79JDx2SYA==' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua: "Not.A/Brand";v="8", "Chromium";v="114", "Microsoft Edge";v="114"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  --data-raw 'utf8=%E2%9C%93&user%5Bemail%5D=i667zjl%40hotmail.com&user%5Bpassword%5D=Zxcvbnm1&policy_confirmed=1&commit=Sign+In' \
+  --compressed

@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MedianOfTwoSortedArray4",
+            "request": "launch",
+            "mainClass": "MedianOfTwoSortedArray4",
+            "projectName": "note_e1c64062"
+        },
+        {
+            "type": "java",
+            "name": "Launch MergeIntervals",
+            "request": "launch",
+            "mainClass": "MergeIntervals",
+            "projectName": "note_e1c64062"
+        },
+        {
+            "type": "java",
+            "name": "Launch PerfectSquares279",
+            "request": "launch",
+            "mainClass": "PerfectSquares279",
+            "projectName": "note_e1c64062"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
