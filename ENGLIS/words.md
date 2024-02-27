@@ -43,3 +43,28 @@
 - tunnel
 - neat
 - compulsory course/obligatory course
+
+2023.10.17 medicine
+- migraine
+- sneeze
+- runny nose
+- sniffle
+
+2024.2.9
+- sow  母猪
+- I'm old and my voice is hoarse
+- it was a stirring tune
+- after a few preliminary tries经过一些初步的尝试
+- in tremendous unison
+- The cows lowed it, the dogs whined it, the sheep bleated it, the horses whinnied it, the ducks quacked it.
+- five times in succession
+- perche
+- orchard 果园
+- breeding up for sale.
+- boar
+- apathy
+- oat
+- linseed 亚麻籽
+- frothing creamy milk
+- hind
+- toiled
